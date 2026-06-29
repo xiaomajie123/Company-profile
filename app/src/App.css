@@ -1,0 +1,55 @@
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection */
+::selection {
+  background-color: hsl(217, 91%, 60%, 0.2);
+  color: hsl(222, 47%, 11%);
+}
+
+/* === Anti-Flash: Prevent any orange tap/focus artifacts === */
+
+/* Kill WebKit tap highlight everywhere */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Override browser default focus outline — use blue instead of orange */
+:focus-visible {
+  outline: 2px solid hsl(217, 91%, 60%) !important;
+  outline-offset: 2px;
+}
+
+/* Disable focus outline on mouse clicks (keep for keyboard nav) */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Remove transitions during active/click states */
+a:active,
+button:active,
+[role="button"]:active {
+  transition: none !important;
+}
+
+/* Admin sidebar nav links — no focus ring at all */
+nav a:focus-visible {
+  outline: none !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(214, 32%, 85%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(214, 32%, 70%);
+}
